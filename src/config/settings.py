@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # First Party
     "user.apps.UserConfig",
+    "blog.apps.BlogConfig",
     # Third Party
     "rest_framework",
     "rest_framework_simplejwt",
