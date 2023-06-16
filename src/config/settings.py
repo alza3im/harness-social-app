@@ -86,6 +86,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "harnessdb",
         "USER": "root",
+        "HOST": "postgres",
         "PASSWORD": "hiremeIamaGreatEngineer",
     }
 }
@@ -141,7 +142,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Celery settings
-CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_BROKER_URL = "redis://redis:6379"
 
 # Location of Celery task modules
-CELERY_IMPORTS = ("geolocation.tasks",)
+CELERY_IMPORTS = ("user.tasks",)
