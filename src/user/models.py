@@ -18,6 +18,7 @@ class UserGeolocation(models.Model):
     )
     ip_address = models.CharField(max_length=45)
     city = models.CharField(max_length=255, null=True)
+    country_code = models.CharField(max_length=2, null=True)
     region = models.CharField(max_length=255, null=True)
     postal_code = models.CharField(max_length=20, null=True)
     country = models.CharField(max_length=255, null=True)
