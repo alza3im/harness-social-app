@@ -3,3 +3,6 @@ djangorestframework
 djangorestframework-simplejwt
 Pillow
 psycopg2
+redis
+requests
+celery
