@@ -7,12 +7,12 @@ A simple REST API based social network in Django where Users can sign up and log
 Once signed up successfully, data enrichment is performed asynchronously via a Celery task, where the geolocation data of the IP that the signup originated from is fetched from abstractapi's api, with multiple retries setup for requests towards it.
 
 
-The following API endpoints were implemented : 
-● user signup 
-● user login 
-● get user data 
-● post CRUD 
-● post like/unlike 
+The following API endpoints were implemented :  
+-  user signup
+-  ser login
+-  get user data
+-  Post CRUD
+-  Post like/unlike 
 
 
 #### Features
@@ -23,9 +23,11 @@ The following API endpoints were implemented :
 5. Basic tests were written for SignUpView as a POC
 6. Basic serializers were used to validate the data.
 
+
 ### Project prereq
 
 Make sure you have Docker installed and running and docker-compose installed on your machine.
+
 
 ### Steps to get started
 1. Clone the repo:
@@ -43,6 +45,7 @@ cd harness-social-app
 docker-compose up
 ```
 App should be running on http://0.0.0.0:8000/
+
 
 ### API endpoints
 
@@ -64,41 +67,40 @@ post/ <int:post_id>/like/ [name='post-like']
 
 ```
 
-Use postman to hit the endpoint(s)
 
-Example url: 
+Sample request: 
 
-http://0.0.0.0:8000/api/signup/
-
-
-Example request: 
-
+```
 curl -X POST -H "Content-Type: application/json" -d '{
     "email":"khalil@harness.com",
     "password":"1234",
     "name": "Hire me"
 }' http://localhost:8000/api/signup/
+```
 
 
 #### Note 1 :
 Most of the endpoints are protected, so if you want to hit them, you should get your tokens first via :
 
+```
 curl -X POST -H "Content-Type: application/json" -d '{
     "email":"khalil@harness.com",
     "password":"1234",
 }' http://localhost:8000/api/token/
+```
 
 
 #### Note 2
 
 You might have an issue with migrations not running.
 
-Incase that happens open a new terminal and log in to the Django container and manually migrate:
+In case that happens open a new terminal and log in to the Django container and manually migrate:
 
 ```
 $ docker-compose exec django bash
 app# python3 src/manage.py migrate
 ```
+
 ### To do :
 
 There's still a lot to be considred to do for this application to be production ready, 
